@@ -1,5 +1,6 @@
 #!/bin/bash
 
+# bash file to run speech processing module
 
 # roscore &
 rosrun fyp question.py
