@@ -2,6 +2,7 @@
 import rospy
 from std_msgs.msg import String
 
+# done speech processing module, send message to trigger navigation to move to next point
 
 def speech_publish():
     rospy.init_node('speech_publish', anonymous=True)
