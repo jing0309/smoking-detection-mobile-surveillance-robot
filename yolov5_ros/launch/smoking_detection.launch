@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<launch>
+
+  <param name="yolov5_path"       value="$(find yolov5_ros)/yolov5"/>
+  <param name="use_cpu"           value="true"/>
+
+  <node pkg="yolov5_ros" type="smoking_yolo.py" name="yolov5_ros" output="screen" >
+    <param name="weight_path"       value="/home/mustar/Downloads/best.pt"/>
+    <param name="pub_topic"         value="/yolov5/BoundingBoxes" />
+    <param name="image_path"       value="$(find yolov5_ros)/media/smoking_activity_detection.jpg"/>
+    <param name="camera_frame"      value="camera_color_frame"/>
+    <param name="conf"              value="0.5"/>
+  </node>
+
+  <node name="mp_node" pkg="yolov5_ros" type="hand_face_mp.py" output="screen">
+    <param name="image_path"       value="$(find yolov5_ros)/media/smoking_activity_detection.jpg"/>
+  </node>
+  <node name="intersect_node" pkg="yolov5_ros" type="intersection.py" output="screen"/>
+
+</launch>
