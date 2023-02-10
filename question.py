@@ -10,12 +10,12 @@ def googlesr():
     rospy.init_node('googlesr', anonymous=True)
     pub = rospy.Publisher('input', String, queue_size=10)
     text = "Hi, I am a surveillance robot in this university. I have detected you are smoking in non-smoking area. "
-    tts = gTTS(text)
+    tts = gTTS(text) # speech synthesis
     tts.save("speech.mp3")
     os.system("mpg321 speech.mp3")
     os.remove("speech.mp3")
 
-    while not rospy.is_shutdown():
+    while not rospy.is_shutdown(): # keep looping if no audio received
         
         text = "Please tell me your identity. Are you a student or staff from this university?"
         tts = gTTS(text)
@@ -36,11 +36,11 @@ def googlesr():
             result = r.recognize_google(audio)
             print("SR result: " + result)
             f = open("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/respond.txt", "w")
-            f.write(result)
+            f.write(result) # write the received response in text file, rnn need to process later
             f.close()
 
             pub.publish(result)
-            rospy.signal_shutdown("done")
+            rospy.signal_shutdown("done") # received an audio, stop looping
 
         except sr.UnknownValueError:
             print("SR could not understand audio")
@@ -50,7 +50,7 @@ def googlesr():
 
 if __name__ == '__main__':
     try:
-        googlesr()
+        googlesr() 
     except rospy.ROSInterruptException:
         pass
 
