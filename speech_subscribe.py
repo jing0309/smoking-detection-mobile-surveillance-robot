@@ -3,6 +3,8 @@ import rospy
 from std_msgs.msg import String
 import subprocess
 
+# run from beginning, wait for smoker detection module to trigger speech processing module
+# once smoking activity detected, receive message from here and run fyp.sh
     
 def speech_subscribe():
     rospy.init_node('speech_subscribe', anonymous=True)
