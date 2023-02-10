@@ -62,8 +62,9 @@ def createpdf():
   f = open("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/identity.txt", "r") # Get Identity
   identity = f.read()
   f.close()
-
-  g = open("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/location.txt", "r") # Get Identity
+  
+  # need to change path, refer the file wrote by navigation
+  g = open("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/location.txt", "r") # Get location
   location = g.read()
   g.close()
 
@@ -72,7 +73,7 @@ def createpdf():
   pdf.set_margins(left=30, top=float, right= float)
   pdf.set_font('Arial', 'BU', 16)
   pdf.cell(w=190, h = 16, txt = 'SMOKER DETECTION REPORT', border = 0,ln = 2, align = 'C', fill = False, link = '')
-  pdf.image("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/Smoker.jpg", x = 70, y = 35, w = 70, h = 0, type = 'JPG', link = '')
+  pdf.image("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/Smoker.jpg", x = 70, y = 35, w = 70, h = 0, type = 'JPG', link = '') # need to change path, refer image processing module, see where it stores the image captured
   pdf.set_font('Arial', 'B', 13)
   pdf.text(x=30,y=100,txt = 'Name: '+ name)
   pdf.text(x=30,y=110,txt = 'ID: '+ id_ic)
@@ -92,6 +93,7 @@ def prompt_input():
   identity = f.read()
   f.close()
   text = ""
+  # synthesis speech based on rnn result
   if identity == "UM Staff":
     text = "Please insert your name and Staff ID"
   elif identity == "UM Student":
@@ -106,6 +108,7 @@ def prompt_input():
 
 
 def announcement(name):
+  # give gentle reminder
   text = '''Hello {x}, I am responsible to advise you to not smoking in this area. 
   Students need a clean and healthy environment to study. Thank you and wish you a nice day.'''.format(x=name)
     
