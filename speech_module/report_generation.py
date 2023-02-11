@@ -64,7 +64,7 @@ def createpdf():
   f.close()
   
   # need to change path, refer the file wrote by navigation
-  g = open("/home/mustar/catkin_ws/src/fyp_jiamun/fyp/location.txt", "r") # Get location
+  g = open("/home/mustar/catkin_ws/src/smoking-detection-mobile-surveillance-robot/location.txt", "r") # Get location
   location = g.read()
   g.close()
 

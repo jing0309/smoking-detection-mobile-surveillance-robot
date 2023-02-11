@@ -1,0 +1,7 @@
+<launch>
+
+  <node name="navi_point" pkg="navigation_module" type="smoking_patrol.py" output="screen"/>
+  <node name="scanning" pkg="navigation_module" type="scanning.py" output="screen"/>
+  <node name="distance_prediction" pkg="navigation_module" type="distance_prediction.py" output="screen"/>
+
+</launch>
