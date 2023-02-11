@@ -31,6 +31,20 @@ $ `conda activate ycpytorch`
 (ycpytorch) $ `./run.sh`
 </ol>
 
+### Important parameters to note in the `launch` folder of `yolov5_ros`:
+
+- `weight_path`
+Path to the trained weights
+
+- `image_topic`
+Robot camera index
+
+- `conf`
+Confidence level
+
+- `image_path`
+Path to the image
+
 **NOTE:**
 <ul>
 <li>Please remember to change the image paths before executing the code</li>
