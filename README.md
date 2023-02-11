@@ -5,7 +5,7 @@ The final year project by Chia Jing Hui, Chong Jia Mun, Goh Yan Cheng, students 
 <ul>
 <li>Ubuntu 18.04</li>
 <li>ROS Melodic</li>
-<li>Python 3.8</li>
+<li>Python 3.8.15</li>
 </ul>
 
 **Steps to Run:**
