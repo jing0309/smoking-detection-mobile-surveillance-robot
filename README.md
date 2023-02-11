@@ -31,7 +31,7 @@ $ `conda activate ycpytorch`
 (ycpytorch) $ `./run.sh`
 </ol>
 
-### Important parameters to note in the `launch` folder of `yolov5_ros`:
+### Important parameters to note in the [launch](https://github.com/jing0309/smoking-detection-mobile-surveillance-robot/tree/main/yolov5_ros/launch) folder of `yolov5_ros`:
 
 - `weight_path`
 Path to the trained weights
